@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 定义逻辑视图与物理视图之间的联系 -->
+    <package name="trio" extends="struts-default">
+        <action name="home" class="com.structs.trio.MainAction" method="returnHome">
+            <result name="SUCCESS">/index.jsp</result>
+            <result name="FALSE">/False.jsp</result>
+        </action>
+        <!--to search all books belong to the author-->
+		<action name="search" class="com.structs.trio.MainAction" method="toSearch">
+			<result name="SUCCESS">/ShowBook.jsp</result>
+			<result name="FALSE">/False.jsp</result>
+		</action>
+	<!--when click a book name to see the information-->
+		<action name="seeinfo" class="com.structs.trio.HelloStrutsAction" method="seeInfo">
+			<result name="SUCCESS">/ShowAll.jsp</result>
+			<result name="FALSE">/False.jsp</result>
+		</action>
+	<!--delete book-->
+		<action name="deleteBook" class="com.structs.trio.HelloStrutsAction" method="deleteBook">
+			<result name="SUCCESS">/Success.jsp</result>
+			<result name="FALSE">/False.jsp</result>
+		</action>
+    </package>
+    <!-- end -->
+</struts>
+
